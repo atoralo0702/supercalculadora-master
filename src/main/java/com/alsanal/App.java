@@ -1,6 +1,10 @@
 package com.alsanal;
 import java.util.Scanner;
 
+
+
+
+
 public class App 
 {
     public static void main( String[] args ){
@@ -8,7 +12,7 @@ public class App
         Scanner sc = new Scanner(System.in);
         
         int opcion;
-        int subopcion1;
+        
         
     
         do {
@@ -46,11 +50,15 @@ public class App
 
                         /* Código Santiago Sánchez Fernandez */
 
+                        menuEcuaciones1y2Grado();
+
                     break;
 
             }
         
         }while( opcion != 0);
+
+        sc.close();
     }
 
 
@@ -109,6 +117,8 @@ public class App
                 }
 
             }while(subopcion1 != 0);
+
+            sc.close();
         }
 
 
@@ -201,6 +211,8 @@ public class App
                     }
 
                 } while(subopcion2 != 0);
+
+                sc.close();
         }
         public static int sumar(int a, int b){
             return a+b;
@@ -215,5 +227,171 @@ public class App
             return a/b;
         }
 
-        
+
+
+        /* Código - Santiago Fernandez - 15/02/2022 */
+
+        public static double ecuacion1Grado (double a, double b, double c, String operacion) {
+
+            double resultado;
+            if (operacion.equalsIgnoreCase("si")) {
+
+                resultado = (c-b)/a;
+
+            } else  {
+
+                resultado = (c+b)/a;
+            } 
+
+            return resultado;
+
+        }
+
+        public static double[] ecuacion2Grado(double a, double b, double c) {
+ 
+            double discriminante = (Math.pow(b, 2) - (4 * a * c));
+            if (discriminante >= 0) {
+         
+                double soluciones[];
+         
+                // Una solucion
+                if(discriminante == 0){
+         
+                    soluciones = new double[1];
+         
+                    soluciones[0] = ((-b) - (4 * a * c)) / (2 * a);
+         
+                // Dos soluciones
+                }else{
+         
+                    soluciones = new double[2];
+         
+                    soluciones[0] = ((-b) + Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
+         
+                    soluciones[1] = ((-b) - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
+         
+                }
+         
+                return soluciones;
+            } else {
+                // Sin solucion
+                return null;
+            }
+         
+        }
+
+        public static boolean opcionValida(String opcion) {
+
+        boolean valido;
+
+         if (opcion.equalsIgnoreCase("si")) {
+
+           valido =  true;
+         } else if (opcion.equalsIgnoreCase("no")) {
+
+           valido =  true;
+         } else {
+
+           valido =  false;
+         }
+
+         return valido;
+
+        }
+
+        public static void menuEcuaciones1y2Grado(){
+
+            Scanner sc = new Scanner(System.in);
+            String respuesta;
+            double num1, num2, num3; 
+            int subopcion2;
+            
+
+            do {
+                
+                System.out.println("\t\n[2] Ecuaciones primer y segundo grado\n");
+                System.out.println("\t0. Volver al menú principal");
+                System.out.println("\t1. Ecuacion primer grado");
+                System.out.println("\t2. Ecuacion segundo grado");
+                
+                System.out.printf("Introduzca una opción: ");
+                
+                subopcion2 = sc.nextInt();
+            
+                /* Ecuaciones primer y segundo grado (1. Ecuacion primer grado - 2. Ecuacion segundo grado ) */
+
+                    switch(subopcion2) {
+
+
+                        case 1:
+                            System.out.printf("\nIntroduzca el primer número: ");
+                            num1 = sc.nextDouble();
+
+                            System.out.printf("\nIntroduzca el segundo número: ");
+                            num2 = sc.nextDouble();
+
+                            System.out.printf("\nIntroduzca el tercer número: ");
+                            num3 = sc.nextDouble();
+
+                            System.out.printf("\nIntroduzca si la ecuacion es una suma o no:");
+                            System.out.printf("\nSolo son validas si o no:");
+
+                            respuesta = sc.next();
+
+                            System.out.println(respuesta);
+
+                            
+                            System.out.println(respuesta.equalsIgnoreCase("si"));
+
+
+                            while (!opcionValida(respuesta)) {
+
+                                System.out.printf("\n No es una opcion valida");
+                                System.out.printf("\nSolo son validas si o no");
+                                System.out.printf("\nIntroduzca su opcion");
+
+                                respuesta = sc.next();
+
+
+                            }
+
+
+                            System.out.println("\n\tResultado: " + ecuacion1Grado(num1, num2, num3, respuesta));
+
+                            break;
+                        
+                        case 2:
+                            System.out.printf("\nIntroduzca el primer número: ");
+                            num1 = sc.nextDouble();
+
+                            System.out.printf("\nIntroduzca el segundo número: ");
+                            num2 = sc.nextDouble();
+
+                            System.out.printf("\nIntroduzca el tercer número: ");
+                            num3 = sc.nextDouble();
+
+
+                            double resultados[] = ecuacion2Grado(num1, num2, num3);
+
+                            if (resultados == null) {
+                                System.out.println("No tiene solucion");
+                            } else {
+                                for (int i = 0; i < resultados.length; i++) {
+                                    System.out.println(resultados[i]);
+                                }
+                            }
+
+                            break;
+
+                        
+
+                        default:
+                            System.out.println("\nPor favor, introduzca una opción válida (1-4)");
+                        
+                    }
+
+                } while(subopcion2 != 0);
+
+                sc.close();
+        }
 }
