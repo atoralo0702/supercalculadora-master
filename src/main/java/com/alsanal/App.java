@@ -65,7 +65,7 @@ public class App
 
 
 
-/* Código - Alejandro Torres */
+/* Código - Alejandro Torres - 14/02/2022 */
 
       /* Funciones Área Polígonos Regulares / Teorema de Pitágoras */
 
