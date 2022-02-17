@@ -33,13 +33,13 @@ public class App
 
                 case 1:
                 
-                    menuPoligonos();
+                    menuPoligonos(sc);
 
                     break;
 
                 case 2:
 
-                    menuAritmeticaBasica();
+                    menuAritmeticaBasica(sc);
                     
                     break;
 
@@ -50,7 +50,7 @@ public class App
 
                         /* Código Santiago Sánchez Fernandez */
 
-                        menuEcuaciones1y2Grado();
+                        menuEcuaciones1y2Grado(sc);
 
                     break;
 
@@ -69,9 +69,9 @@ public class App
 
       /* Funciones Área Polígonos Regulares / Teorema de Pitágoras */
 
-        public static void menuPoligonos(){
+        public static void menuPoligonos(Scanner sc){
 
-            Scanner sc = new Scanner(System.in);
+            
             int num1, num2, num3, subopcion1;
 
             do {
@@ -118,7 +118,7 @@ public class App
 
             }while(subopcion1 != 0);
 
-            sc.close();
+            
         }
 
 
@@ -139,9 +139,9 @@ public class App
 /* Código - Alejandro Pino - 14/02/2022 */
     
     /* Funciones Aritmética Básica */
-        public static void menuAritmeticaBasica(){
+        public static void menuAritmeticaBasica(Scanner sc){
 
-            Scanner sc = new Scanner(System.in);
+            
             int num1, num2, subopcion2;
 
             do {
@@ -212,7 +212,7 @@ public class App
 
                 } while(subopcion2 != 0);
 
-                sc.close();
+                
         }
         public static int sumar(int a, int b){
             return a+b;
@@ -299,9 +299,9 @@ public class App
 
         }
 
-        public static void menuEcuaciones1y2Grado(){
+        public static void menuEcuaciones1y2Grado(Scanner sc){
 
-            Scanner sc = new Scanner(System.in);
+            
             String respuesta;
             double num1, num2, num3; 
             int subopcion2;
@@ -324,13 +324,13 @@ public class App
 
 
                         case 1:
-                            System.out.printf("\nIntroduzca el primer número: ");
+                            System.out.printf("\nIntroduzca el numero de la x: ");
                             num1 = sc.nextDouble();
 
                             System.out.printf("\nIntroduzca el segundo número: ");
                             num2 = sc.nextDouble();
 
-                            System.out.printf("\nIntroduzca el tercer número: ");
+                            System.out.printf("\nIntroduzca el resultado: ");
                             num3 = sc.nextDouble();
 
                             System.out.printf("\nIntroduzca si la ecuacion es una suma o no:");
@@ -361,13 +361,13 @@ public class App
                             break;
                         
                         case 2:
-                            System.out.printf("\nIntroduzca el primer número: ");
+                            System.out.printf("\nIntroduzca el multiplo de la x al cuadrado: ");
                             num1 = sc.nextDouble();
 
-                            System.out.printf("\nIntroduzca el segundo número: ");
+                            System.out.printf("\nIntroduzca el multiplo de la x: ");
                             num2 = sc.nextDouble();
 
-                            System.out.printf("\nIntroduzca el tercer número: ");
+                            System.out.printf("\nIntroduzca el 3 numero: ");
                             num3 = sc.nextDouble();
 
 
@@ -392,6 +392,6 @@ public class App
 
                 } while(subopcion2 != 0);
 
-                sc.close();
+                
         }
 }
