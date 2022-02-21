@@ -1,12 +1,7 @@
 package com.alsanal;
 import java.util.Scanner;
+public class App{
 
-
-
-
-
-public class App 
-{
     public static void main( String[] args ){
 
         Scanner sc = new Scanner(System.in);
@@ -72,7 +67,9 @@ public class App
         public static void menuPoligonos(Scanner sc){
 
             
-            int num1, num2, num3, subopcion1;
+            String num1, num2, num3, subopcion1;
+
+            
 
             do {
 
@@ -82,19 +79,22 @@ public class App
                 System.out.println("\t2. Teorema de pitágoras");
                 System.out.printf("\n\nIntroduzca una opción: ");
 
-                subopcion1 = sc.nextInt();
+                subopcion1 = sc.nextLine();
+                comprobarOpcion(subopcion1);
 
                  switch(subopcion1) {
 
                     case 1:
                         System.out.printf("\nIntroduzca el número de lados: ");
-                        num1 = sc.nextInt();
+                        num1 = sc.next();
+
+                        comprobarOpcion(num1);
 
                         System.out.printf("\nIntroduzca la longitud: ");
-                        num2 = sc.nextInt();
+                        num2 = sc.nextLine();
 
                         System.out.printf("\nIntroduzca la apotema: ");
-                        num3 = sc.nextInt();
+                        num3 = sc.nextLine();
 
                         System.out.println("\n\t-- Resultado: " + areaPoligonosRegulares(num1, num2, num3) + " m2\n");
 
@@ -133,6 +133,24 @@ public class App
             int hipotenusa = cateto_a * cateto_b;
 
             return hipotenusa;
+        }
+
+        public static int comprobarOpcion(String opcion){
+
+
+            int numeroValido = 0;
+
+            try {
+
+                Double.parseDouble(opcion);
+                numeroValido = Integer.parseInt(opcion);
+                }catch(NumberFormatException e) {
+                    System.out.println("It is not numerical string");
+                }
+
+                return numeroValido;
+
+                
         }
 
 

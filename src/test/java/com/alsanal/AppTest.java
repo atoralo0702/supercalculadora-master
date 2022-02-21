@@ -114,6 +114,46 @@ public class AppTest {
         System.setOut(systemOut);
     }
 
+    //Alejandro Torres Alonso --inicio --21/02/2022--
 
+    @Test
+    @DisplayName("Test entrada a Menú de Polígonos regulares y Teorema de Pitágoras, opción 1")
+    public void testCasoMenuPoligonosRegularesYTeoremaDePitagoras1() {
+       
+        provideInput("1\n1\n5\n6\n4");
+              
+        App.main(new String[0]);
+        assertThat(getOutput(), containsString("60 m2") );
+        
+    }
+
+    @Test
+    @DisplayName("Test entrada a Menú de Polígonos regulares y Teorema de Pitágoras, opción 2")
+    public void testCasoMenuPoligonosRegularesYTeoremaDePitagoras2() {
+       
+        provideInput("1\n2\n4\n6");
+        
+        App.main(new String[0]);
+        assertThat(getOutput(), containsString("24") );
+        
+    }
+
+    @Test
+    @DisplayName("Test salida a Menú principal desde opción 1")
+    public void testCasoSalidaMenuPoligonosRegularesYTeoremaDePitagorasaMenuPrincipal() {
+       
+        provideInput("1\n0");
+        
+        App.main(new String[0]);
+        assertThat(getOutput(), containsString("MENÚ SUPERCALCULADORA") );
+        assertThat(getOutput(), containsString("0. Salir.") );
+        assertThat(getOutput(), containsString("1. Polígonos Regulares y Teorema de Pitágoras") );
+        assertThat(getOutput(), containsString("2. Aritmética básica") );
+        assertThat(getOutput(), containsString("3. Ecuaciones 1er y 2do grado") );
+        assertThat(getOutput(), containsString("Introduzca una opción:") );
+    }
+
+
+    //Alejandro Torres Alonso --fin --21/02/2022
 
 }
