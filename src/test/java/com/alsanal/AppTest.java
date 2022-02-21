@@ -47,6 +47,67 @@ public class AppTest {
         
     }
 
+    //Santi empieza a codificar el 21/02/2022
+
+    @Test
+    @DisplayName("Test entrada a Menú de Ecuaciones, 1 grado, suma")
+    public void testCasoMenuEcuaciones1GradoSuma() {
+       
+        provideInput("3\n1\n5\n2\n8\nsi");
+        
+        App.main(new String[0]);
+        assertThat(getOutput(), containsString("1.2") );
+        
+    }
+
+    @Test
+    @DisplayName("Test entrada a Menú de Ecuaciones, 1 grado, resta")
+    public void testCasoMenuEcuaciones1GradoResta() {
+       
+        provideInput("3\n1\n5\n2\n8\nno");
+        
+        App.main(new String[0]);
+        assertThat(getOutput(), containsString("2.0") );
+        
+    }
+
+    @Test
+    @DisplayName("Test entrada a Menú de Ecuaciones, 2 grado, no solucion")
+    public void testCasoMenuEcuaciones2GradoNoSolucion() {
+       
+        provideInput("3\n1\n5\n2\n8");
+        
+        App.main(new String[0]);
+        assertThat(getOutput(), containsString("No tiene solucion") );
+        
+    }
+
+    @Test
+    @DisplayName("Test entrada a Menú de Ecuaciones, 2 grado, dos soluciones")
+    public void testCasoMenuEcuaciones2Grado2Soluciones() {
+       
+        provideInput("3\n2\n1\n-5\n6");
+        
+        App.main(new String[0]);
+        assertThat(getOutput(), containsString("3.0") );
+        assertThat(getOutput(), containsString("2.0") );
+        
+    }
+
+    @Test
+    @DisplayName("Test entrada a Menú de Ecuaciones, 2 grado, una soluciones")
+    public void testCasoMenuEcuaciones2Grado1Soluciones() {
+       
+        provideInput("3\n2\n1\n-2\n1");
+        
+        App.main(new String[0]);
+        assertThat(getOutput(), containsString("-1.0") );
+        
+        
+    }
+
+    //termino de modificar el 21/02/22
+
     @AfterEach
     public void restoreSystemInputOutput() {
         System.setIn(systemIn);
