@@ -26,26 +26,24 @@ public class App{
 
                 case 1:
                 
+                    /* Código Alejandro Torres */
                     menuPoligonos(sc);
 
                     break;
 
                 case 2:
 
+                    /* Código Alejandro Pino Tejón */
                     menuAritmeticaBasica(sc);
                     
                     break;
 
+                case 3: 
 
-                    /* Ecuaciones 1º y 2º */
+                    /* Código Santiago Sánchez Fernandez */
+                    menuEcuaciones1y2Grado(sc);
 
-                    case 3: 
-
-                        /* Código Santiago Sánchez Fernandez */
-
-                        menuEcuaciones1y2Grado(sc);
-
-                    break;
+                break;
 
             }
         
