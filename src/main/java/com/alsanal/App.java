@@ -20,13 +20,7 @@ public class App{
 
             System.out.printf("\nIntroduzca una opción: ");
 
-            while(!sc.hasNextInt()) {
-
-                System.out.println("Valor no valido");
-                sc.next();
-                System.out.println("INtroduce un numero");
-               
-            }
+          comprobarNumero(sc);
             opcion = sc.nextInt();
 
 
@@ -88,6 +82,8 @@ public class App{
                 System.out.println("\t2. Teorema de pitágoras");
                 System.out.printf("\n\nIntroduzca una opción: ");
 
+                
+
                 subopcion1 = sc.nextInt();
 
                
@@ -95,15 +91,18 @@ public class App{
 
                     case 1:
                         System.out.printf("\nIntroduzca el número de lados: ");
+                        
                         num1 = sc.nextInt();
 
                         
 
 
                         System.out.printf("\nIntroduzca la longitud: ");
+                        
                         num2 = sc.nextInt();
 
                         System.out.printf("\nIntroduzca la apotema: ");
+                        
                         num3 = sc.nextInt();
 
                         System.out.println("\n\t-- Resultado: " + areaPoligonosRegulares(num1, num2, num3) + " m2\n");
@@ -112,9 +111,11 @@ public class App{
                     
                     case 2:
                         System.out.printf("\n\u001B[34mCateto \u001B[31mA\u001B[37m: ");
+                        
                         num1 = sc.nextInt();
 
                         System.out.printf("\n\u001B[34mCateto \u001B[31mB\u001B[37m: ");
+                        
                         num2 = sc.nextInt();
 
                         System.out.println("\n\tResultado: \u001B[32m" + teoremadePitagoras(num1,num2) + "\n");
@@ -173,9 +174,11 @@ public class App{
 
                         case 1:
                             System.out.printf("\nIntroduzca el primer número: ");
+                            
                             num1 = sc.nextInt();
 
                             System.out.printf("\nIntroduzca el segundo número: ");
+                            
                             num2 = sc.nextInt();
 
                             System.out.println("\n\tResultado: " + sumar(num1,num2));
@@ -184,9 +187,11 @@ public class App{
                         
                         case 2:
                             System.out.printf("\nIntroduzca el primer número: ");
+                            
                             num1 = sc.nextInt();
 
                             System.out.printf("\nIntroduzca el segundo número: ");
+                            
                             num2 = sc.nextInt();
 
                             System.out.println("\n\tResultado: " + restar(num1,num2));
@@ -195,9 +200,11 @@ public class App{
 
                         case 3:
                             System.out.printf("\nIntroduzca el primer número: ");
+                            
                             num1 = sc.nextInt();
 
                             System.out.printf("\nIntroduzca el segundo número: ");
+                            
                             num2 = sc.nextInt();
 
                             System.out.println("\n\tResultado: " + multiplicar(num1,num2));
@@ -206,9 +213,11 @@ public class App{
                         
                         case 4:
                             System.out.printf("\nIntroduzca el primer número: ");
+                            
                             num1 = sc.nextInt();
 
                             System.out.printf("\nIntroduzca el segundo número: ");
+                            
                             num2 = sc.nextInt();
 
                             System.out.println("\n\tResultado: " + dividir(num1,num2));
@@ -325,7 +334,7 @@ public class App{
                 System.out.println("\t2. Ecuacion segundo grado");
                 
                 System.out.printf("Introduzca una opción: ");
-                
+                comprobarNumero(sc);
                 subopcion2 = sc.nextInt();
             
                 /* Ecuaciones primer y segundo grado (1. Ecuacion primer grado - 2. Ecuacion segundo grado ) */
@@ -335,12 +344,15 @@ public class App{
 
                         case 1:
                             System.out.printf("\nIntroduzca el numero de la x: ");
+                            comprobarNumero(sc);
                             num1 = sc.nextDouble();
 
                             System.out.printf("\nIntroduzca el segundo número: ");
+                            comprobarNumero(sc);
                             num2 = sc.nextDouble();
 
                             System.out.printf("\nIntroduzca el resultado: ");
+                            comprobarNumero(sc);
                             num3 = sc.nextDouble();
 
                             System.out.printf("\nIntroduzca si la ecuacion es una suma o no:");
@@ -372,12 +384,15 @@ public class App{
                         
                         case 2:
                             System.out.printf("\nIntroduzca el multiplo de la x al cuadrado: ");
+                            comprobarNumero(sc);
                             num1 = sc.nextDouble();
 
                             System.out.printf("\nIntroduzca el multiplo de la x: ");
+                            comprobarNumero(sc);
                             num2 = sc.nextDouble();
 
                             System.out.printf("\nIntroduzca el 3 numero: ");
+                            comprobarNumero(sc);
                             num3 = sc.nextDouble();
 
 
@@ -404,6 +419,20 @@ public class App{
 
                 
         }
+
+        public static void comprobarNumero( Scanner datoIntroducido) {
+
+            while(!datoIntroducido.hasNextInt()) {
+
+                System.out.println("Valor no valido");
+                datoIntroducido.next();
+                System.out.println("INtroduce un numero");
+               
+            }
+
+        }
+
+            
 
         
 }
