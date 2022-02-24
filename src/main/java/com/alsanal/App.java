@@ -1,5 +1,7 @@
 package com.alsanal;
 import java.util.Scanner;
+
+
 public class App{
 
     public static void main( String[] args ){
@@ -17,7 +19,18 @@ public class App{
             System.out.println("\t3. Ecuaciones 1er y 2do grado");
 
             System.out.printf("\nIntroduzca una opción: ");
+
+            while(!sc.hasNextInt()) {
+
+                System.out.println("Valor no valido");
+                sc.next();
+                System.out.println("INtroduce un numero");
+               
+            }
             opcion = sc.nextInt();
+
+
+          
 
             System.out.println("");
 
@@ -65,6 +78,8 @@ public class App{
             
             int num1, num2, num3, subopcion1;
 
+            
+
             do {
 
                 System.out.println("\n[1] Polígonos Regulares y Teorema de Pitágoras\n");
@@ -75,19 +90,14 @@ public class App{
 
                 subopcion1 = sc.nextInt();
 
+               
                  switch(subopcion1) {
 
                     case 1:
                         System.out.printf("\nIntroduzca el número de lados: ");
                         num1 = sc.nextInt();
 
-                        try{
-
-                            validarNumeros(sc);
-
-                        }catch(){
-
-                        }
+                        
 
 
                         System.out.printf("\nIntroduzca la longitud: ");
@@ -395,13 +405,5 @@ public class App{
                 
         }
 
-        private static void validarNumeros(Scanner sc) throws Exception{
-
-            if(!sc.hasNextInt()){
-
-                sc.nextInt();
-                throw new Exception("Ha introducido una palabra, introduzca el número de lados");
-            }
-
-        }
+        
 }
