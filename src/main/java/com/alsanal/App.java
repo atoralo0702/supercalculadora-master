@@ -7,9 +7,7 @@ public class App{
         Scanner sc = new Scanner(System.in);
         
         int opcion;
-        
-        
-    
+
         do {
 
             System.out.println("\nMENÚ SUPERCALCULADORA");
@@ -67,9 +65,7 @@ public class App{
         public static void menuPoligonos(Scanner sc){
 
             
-            String num1, num2, num3, subopcion1;
-
-            
+            int num1, num2, num3, subopcion1;
 
             do {
 
@@ -79,22 +75,29 @@ public class App{
                 System.out.println("\t2. Teorema de pitágoras");
                 System.out.printf("\n\nIntroduzca una opción: ");
 
-                subopcion1 = sc.nextLine();
-                comprobarOpcion(subopcion1);
+                subopcion1 = sc.nextInt();
 
                  switch(subopcion1) {
 
                     case 1:
                         System.out.printf("\nIntroduzca el número de lados: ");
-                        num1 = sc.next();
+                        num1 = sc.nextInt();
 
-                        comprobarOpcion(num1);
+                        try{
+
+                            validarNumeros(sc);
+
+                        }catch(){
+
+
+                        }
+
 
                         System.out.printf("\nIntroduzca la longitud: ");
-                        num2 = sc.nextLine();
+                        num2 = sc.nextInt();
 
                         System.out.printf("\nIntroduzca la apotema: ");
-                        num3 = sc.nextLine();
+                        num3 = sc.nextInt();
 
                         System.out.println("\n\t-- Resultado: " + areaPoligonosRegulares(num1, num2, num3) + " m2\n");
 
@@ -133,24 +136,6 @@ public class App{
             int hipotenusa = cateto_a * cateto_b;
 
             return hipotenusa;
-        }
-
-        public static int comprobarOpcion(String opcion){
-
-
-            int numeroValido = 0;
-
-            try {
-
-                Double.parseDouble(opcion);
-                numeroValido = Integer.parseInt(opcion);
-                }catch(NumberFormatException e) {
-                    System.out.println("It is not numerical string");
-                }
-
-                return numeroValido;
-
-                
         }
 
 
@@ -411,5 +396,15 @@ public class App{
                 } while(subopcion2 != 0);
 
                 
+        }
+
+        private static void validarNumeros(Scanner sc) throws Exception{
+
+            if(!sc.hasNextInt()){
+
+                sc.nextInt();
+                throw new Exception("Ha introducido una palabra, introduzca el número de lados");
+            }
+
         }
 }
