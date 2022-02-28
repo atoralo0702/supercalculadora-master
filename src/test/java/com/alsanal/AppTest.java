@@ -116,6 +116,18 @@ public class AppTest {
 
     //Alejandro Torres Alonso --inicio --21/02/2022--
 
+    /*Prueba unitaria del funcionamiento correcto de la supercalculadora:
+    
+    MENÚ SUPERCALCULADORA(Elige opción 1)
+    1.Polígonos Regulares y Teorema de Pitágoras
+
+        1.Área de Polígono regular(Elige subopción 1)
+            Introduzca el número de lados: 5
+            Introduzca la longitud: 6
+            Introduzca la apotema: 4
+
+            Resultado: 60 m2
+    */
     @Test
     @DisplayName("Test entrada a Menú de Polígonos regulares y Teorema de Pitágoras, opción 1")
     public void testCasoMenuPoligonosRegularesYTeoremaDePitagoras1() {
@@ -126,6 +138,18 @@ public class AppTest {
         assertThat(getOutput(), containsString("60 m2") );
         
     }
+
+    /*Prueba unitaria del funcionamiento correcto de la supercalculadora:
+    
+    MENÚ SUPERCALCULADORA(Elige opción 1)
+    1.Polígonos Regulares y Teorema de Pitágoras
+    
+        2.Teorema de Pitágoras(Elige subopción 2)
+            Introduzca Cateto A: 4
+            Introduzca Cateto B: 6
+
+            Resultado: 24
+    */
 
     @Test
     @DisplayName("Test entrada a Menú de Polígonos regulares y Teorema de Pitágoras, opción 2")
@@ -140,7 +164,7 @@ public class AppTest {
 
     @Test
     @DisplayName("Test salida a Menú principal desde opción 1")
-    public void testCasoSalidaMenuPoligonosRegularesYTeoremaDePitagorasaMenuPrincipal() {
+    public void testCasoSalidaMenuPoligonosRegularesYTeoremaDePitagorasaMenuPrincipal1() {
        
         provideInput("1\n0\n0\n");
         
@@ -151,21 +175,6 @@ public class AppTest {
         assertThat(getOutput(), containsString("2. Aritmética básica") );
         assertThat(getOutput(), containsString("3. Ecuaciones 1er y 2do grado") );
         assertThat(getOutput(), containsString("Introduzca una opción:") );
-    }
-
-    @Test
-    @DisplayName("Test salida a Menú principal desde opción 1")
-    public void testCasoSalidaMenuPoligonosRegularesYTeoremaDePitagorasaMenuPrincipalPrueba() {
-       
-        provideInput("1\n");
-        
-        App.main(new String[0]);
-        assertThat(getOutput(), containsString("[1] Polígonos Regulares y Teorema de Pitágoras") );
-        assertThat(getOutput(), containsString("0. Volver al menú principal") );
-        assertThat(getOutput(), containsString("1. Área polígono regular") );
-        assertThat(getOutput(), containsString("2. Teorema de pitágoras") );
-        assertThat(getOutput(), containsString("Introduzca una opción: ") );
-       
     }
 
     //Alejandro Torres Alonso --fin --21/02/2022
