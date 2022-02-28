@@ -8,7 +8,8 @@ public class App{
 
         Scanner sc = new Scanner(System.in);
         
-        int opcion;
+        int  stringInt;
+        String opcion;
 
         do {
 
@@ -20,15 +21,17 @@ public class App{
 
             System.out.printf("\nIntroduzca una opción: ");
 
-          comprobarNumero(sc);
-            opcion = sc.nextInt();
+           comprobarNumero(sc);
+            opcion = sc.next();
+
+            stringInt = Integer.parseInt(opcion);
 
 
           
 
             System.out.println("");
 
-            switch(opcion){
+            switch(stringInt){
         
 
                 case 1:
@@ -54,7 +57,7 @@ public class App{
 
             }
         
-        }while( opcion != 0);
+        }while( stringInt != 0);
 
         sc.close();
     }
@@ -160,7 +163,9 @@ public class App{
                 System.out.println("\t3. Multiplicar");
                 System.out.println("\t4. Dividir\n");
                 System.out.printf("Introduzca una opción: ");
-                
+
+
+                comprobarNumero(sc);
                 subopcion2 = sc.nextInt();
             
                 /* Aritmética Básica (1. Sumar - 2. Restar - 3. Multiplicar - 4. Dividir) */
@@ -170,11 +175,13 @@ public class App{
 
                         case 1:
                             System.out.printf("\nIntroduzca el primer número: ");
-                            
+
+                            comprobarNumero(sc);
                             num1 = sc.nextInt();
 
                             System.out.printf("\nIntroduzca el segundo número: ");
                             
+                            comprobarNumero(sc);
                             num2 = sc.nextInt();
 
                             System.out.println("\n\tResultado: " + sumar(num1,num2));
@@ -184,10 +191,13 @@ public class App{
                         case 2:
                             System.out.printf("\nIntroduzca el primer número: ");
                             
+                            comprobarNumero(sc);
                             num1 = sc.nextInt();
 
                             System.out.printf("\nIntroduzca el segundo número: ");
-                            
+
+
+                            comprobarNumero(sc);
                             num2 = sc.nextInt();
 
                             System.out.println("\n\tResultado: " + restar(num1,num2));
@@ -197,10 +207,13 @@ public class App{
                         case 3:
                             System.out.printf("\nIntroduzca el primer número: ");
                             
+                            comprobarNumero(sc);
                             num1 = sc.nextInt();
 
                             System.out.printf("\nIntroduzca el segundo número: ");
                             
+
+                            comprobarNumero(sc);
                             num2 = sc.nextInt();
 
                             System.out.println("\n\tResultado: " + multiplicar(num1,num2));
@@ -210,10 +223,12 @@ public class App{
                         case 4:
                             System.out.printf("\nIntroduzca el primer número: ");
                             
+                            comprobarNumero(sc);
                             num1 = sc.nextInt();
 
                             System.out.printf("\nIntroduzca el segundo número: ");
                             
+                            comprobarNumero(sc);
                             num2 = sc.nextInt();
 
                             System.out.println("\n\tResultado: " + dividir(num1,num2));
