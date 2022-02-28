@@ -171,16 +171,16 @@ public class AppTest {
     //Alejandro Torres Alonso --fin --21/02/2022
 
 
-    
 
-    /* Alejandro Pino - 25/02/2022 */
+
+/* Alejandro Pino - 25/02/2022 */
 
     /* TEST SUMA RESULTADO */
     @Test
     @DisplayName("Test Caso Suma")
     public void testCasoSuma() {
     
-        provideInput("2\n1\n5\n2\n");
+        provideInput("2\n1\n5\n2\n0\n0");
         
         App.main(new String[0]);
         assertThat(getOutput(), containsString("Resultado: 7") );
@@ -192,7 +192,7 @@ public class AppTest {
     @DisplayName("Test Caso Resta")
     public void testCasoResta() {
     
-        provideInput("2\n2\n5\n2\n");
+        provideInput("2\n2\n5\n2\n0\n0");
         
         App.main(new String[0]);
         assertThat(getOutput(), containsString("Resultado: 3") );
@@ -204,7 +204,7 @@ public class AppTest {
     @DisplayName("Test Caso Multiplicación")
     public void testCasoMultiplicar() {
     
-        provideInput("2\n3\n5\n2\n");
+        provideInput("2\n3\n5\n2\n0\n0");
         
         App.main(new String[0]);
         assertThat(getOutput(), containsString("Resultado: 10") );
@@ -216,7 +216,7 @@ public class AppTest {
     @DisplayName("Test Caso División")
     public void testCasoDividir() {
     
-        provideInput("2\n4\n10\n2\n");
+        provideInput("2\n4\n10\n2\n0\n0");
         
         App.main(new String[0]);
         assertThat(getOutput(), containsString("Resultado: 5") );
@@ -228,16 +228,14 @@ public class AppTest {
     @DisplayName("Test Caso Volver")
     public void testCasoVolver() {
     
-        provideInput("2\n0\n");
+        provideInput("2\n0\n0\n0");
         
         App.main(new String[0]);
-        assertThat(getOutput(), containsString( 
-            "MENÚ SUPERCALCULADORA" + 
-            "0. Salir." +
-            "1. Polígonos Regulares y Teorema de Pitágoras" +
-            "2. Aritmética básica" +
-            "3. Ecuaciones 1er y 2do grado") 
-        );
+        assertThat(getOutput(), containsString("MENÚ SUPERCALCULADORA"));
+        assertThat(getOutput(), containsString("0. Salir."));
+        assertThat(getOutput(), containsString("1. Polígonos Regulares y Teorema de Pitágoras"));
+        assertThat(getOutput(), containsString("2. Aritmética básica"));
+        assertThat(getOutput(), containsString("3. Ecuaciones 1er y 2do grado")); 
         
     }
 
@@ -247,17 +245,10 @@ public class AppTest {
     @DisplayName("Test Caso Introducir carácter no numérico en el Menú aritmética")
     public void testCasoIntroducirLetraMenuAritmetica() {
     
-        provideInput("2\nH\n");
+        provideInput("2\nH\n0\n0\n0\n0");
         
         App.main(new String[0]);
-        assertThat(getOutput(), containsString(
-            "Error, sólo puedes insertar números."+
-            "[2] Aritmética básica"+
-            "0. Volver al menú principal"+
-            "1. Sumar"+
-            "2. Restar"+
-            "3. Multiplicar"+
-            "4. Dividir") 
+        assertThat(getOutput(), containsString("") 
         );
         
     }
@@ -270,13 +261,10 @@ public class AppTest {
         @DisplayName("Test Caso Introducir carácter no numérico num1 operación Suma")
         public void testCasoIntroducirLetraNum1Suma() {
         
-            provideInput("2\n1\nH\n");
+            provideInput("2\n1\nH\n10\n5\n0\n0");
             
             App.main(new String[0]);
-            assertThat(getOutput(), containsString(
-                "Error, sólo puedes insertar números."+
-                "Introduzca el primer número: ") 
-            );
+            assertThat(getOutput(), containsString("Resultado: 15"));
             
         }
 
@@ -285,13 +273,10 @@ public class AppTest {
         @DisplayName("Test Caso Introducir carácter no numérico num2 operación Suma")
         public void testCasoIntroducirLetraNum2Suma() {
         
-            provideInput("2\n1\n100\nH");
+            provideInput("2\n1\n100\nH\n10\n0\n0");
             
             App.main(new String[0]);
-            assertThat(getOutput(), containsString(
-                "Error, sólo puedes insertar números."+
-                "Introduzca el segundo número: ") 
-            );
+            assertThat(getOutput(), containsString("Resultado: 110"));
             
         }
 
@@ -303,13 +288,10 @@ public class AppTest {
         @DisplayName("Test Caso Introducir carácter no numérico num1 operación Resta")
         public void testCasoIntroducirLetraNum1Resta() {
         
-            provideInput("2\n2\nH\n");
+            provideInput("2\n2\nH\n20\n10\n0\n0");
             
             App.main(new String[0]);
-            assertThat(getOutput(), containsString(
-                "Error, sólo puedes insertar números."+
-                "Introduzca el primer número: ") 
-            );
+            assertThat(getOutput(), containsString("Resultado: 10"));
             
         }
 
@@ -318,13 +300,10 @@ public class AppTest {
         @DisplayName("Test Caso Introducir carácter no numérico num2 operación Resta")
         public void testCasoIntroducirLetraNum2Resta() {
         
-            provideInput("2\n2\n100\nH");
+            provideInput("2\n2\n10\nH\n5\n0\n0");
             
             App.main(new String[0]);
-            assertThat(getOutput(), containsString(
-                "Error, sólo puedes insertar números."+
-                "Introduzca el segundo número: ") 
-            );
+            assertThat(getOutput(), containsString("Resultado: 5"));
             
         }
 
@@ -336,12 +315,10 @@ public class AppTest {
         @DisplayName("Test Caso Introducir carácter no numérico num1 operación Multiplicar")
         public void testCasoIntroducirLetraNum1Multiplicar() {
         
-            provideInput("2\n3\nH\n");
+            provideInput("2\n3\nH\n3\n5\n0\n0");
             
             App.main(new String[0]);
-            assertThat(getOutput(), containsString(
-                "Error, sólo puedes insertar números."+
-                "Introduzca el primer número: ") 
+            assertThat(getOutput(), containsString("Resultado: 15") 
             );
             
         }
@@ -351,12 +328,10 @@ public class AppTest {
         @DisplayName("Test Caso Introducir carácter no numérico num2 operación Multiplicar")
         public void testCasoIntroducirLetraNum2Multiplicar() {
         
-            provideInput("2\n3\n100\nH");
+            provideInput("2\n3\n4\nH\n5\n0\n0");
             
             App.main(new String[0]);
-            assertThat(getOutput(), containsString(
-                "Error, sólo puedes insertar números."+
-                "Introduzca el segundo número: ") 
+            assertThat(getOutput(), containsString("Resultado: 20") 
             );
             
         }
@@ -369,12 +344,10 @@ public class AppTest {
         @DisplayName("Test Caso Introducir carácter no numérico num1 operación Dividir")
         public void testCasoIntroducirLetraNum1Dividir() {
         
-            provideInput("2\n4\nH\n");
+            provideInput("2\n4\nH\n10\n2\n0\n0");
             
             App.main(new String[0]);
-            assertThat(getOutput(), containsString(
-                "Error, sólo puedes insertar números."+
-                "Introduzca el primer número: ") 
+            assertThat(getOutput(), containsString("Resultado: 5") 
             );
             
         }
@@ -384,12 +357,10 @@ public class AppTest {
         @DisplayName("Test Caso Introducir carácter no numérico num2 operación Dividir")
         public void testCasoIntroducirLetraNum2Dividir() {
         
-            provideInput("2\n4\n100\nH");
+            provideInput("2\n4\n100\nH\n2\n0\n0");
             
             App.main(new String[0]);
-            assertThat(getOutput(), containsString(
-                "Error, sólo puedes insertar números."+
-                "Introduzca el segundo número: ") 
+            assertThat(getOutput(), containsString("Resultado: 50") 
             );
             
         }
