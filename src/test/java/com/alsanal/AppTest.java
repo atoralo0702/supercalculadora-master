@@ -53,7 +53,7 @@ public class AppTest {
     @DisplayName("Test entrada a Menú de Ecuaciones, 1 grado, suma")
     public void testCasoMenuEcuaciones1GradoSuma() {
        
-        provideInput("3\n1\n5\n2\n8\nsi");
+        provideInput("3\n1\n5\n2\n8\nsi\n0\n0");
         
         App.main(new String[0]);
         assertThat(getOutput(), containsString("1.2") );
@@ -64,7 +64,7 @@ public class AppTest {
     @DisplayName("Test entrada a Menú de Ecuaciones, 1 grado, resta")
     public void testCasoMenuEcuaciones1GradoResta() {
        
-        provideInput("3\n1\n5\n2\n8\nno");
+        provideInput("3\n1\n5\n2\n8\nno\n0\n0");
         
         App.main(new String[0]);
         assertThat(getOutput(), containsString("2.0") );
@@ -75,7 +75,7 @@ public class AppTest {
     @DisplayName("Test entrada a Menú de Ecuaciones, 2 grado, no solucion")
     public void testCasoMenuEcuaciones2GradoNoSolucion() {
        
-        provideInput("3\n1\n5\n2\n8");
+        provideInput("3\n2\n5\n2\n8\n0\n0");
         
         App.main(new String[0]);
         assertThat(getOutput(), containsString("No tiene solucion") );
@@ -86,7 +86,7 @@ public class AppTest {
     @DisplayName("Test entrada a Menú de Ecuaciones, 2 grado, dos soluciones")
     public void testCasoMenuEcuaciones2Grado2Soluciones() {
        
-        provideInput("3\n2\n1\n-5\n6");
+        provideInput("3\n2\n1\n-5\n6\n0\n0");
         
         App.main(new String[0]);
         assertThat(getOutput(), containsString("3.0") );
@@ -98,7 +98,7 @@ public class AppTest {
     @DisplayName("Test entrada a Menú de Ecuaciones, 2 grado, una soluciones")
     public void testCasoMenuEcuaciones2Grado1Soluciones() {
        
-        provideInput("3\n2\n1\n-2\n1");
+        provideInput("3\n2\n1\n-2\n1\n0\n0");
         
         App.main(new String[0]);
         assertThat(getOutput(), containsString("-1.0") );
@@ -120,7 +120,7 @@ public class AppTest {
     @DisplayName("Test entrada a Menú de Polígonos regulares y Teorema de Pitágoras, opción 1")
     public void testCasoMenuPoligonosRegularesYTeoremaDePitagoras1() {
        
-        provideInput("1\n1\n5\n6\n4");
+        provideInput("1\n1\n5\n6\n4\n0\n0\n");
               
         App.main(new String[0]);
         assertThat(getOutput(), containsString("60 m2") );
@@ -131,7 +131,7 @@ public class AppTest {
     @DisplayName("Test entrada a Menú de Polígonos regulares y Teorema de Pitágoras, opción 2")
     public void testCasoMenuPoligonosRegularesYTeoremaDePitagoras2() {
        
-        provideInput("1\n2\n4\n6");
+        provideInput("1\n2\n4\n6\n0\n0\n");
         
         App.main(new String[0]);
         assertThat(getOutput(), containsString("24") );
@@ -142,7 +142,7 @@ public class AppTest {
     @DisplayName("Test salida a Menú principal desde opción 1")
     public void testCasoSalidaMenuPoligonosRegularesYTeoremaDePitagorasaMenuPrincipal() {
        
-        provideInput("1\n0");
+        provideInput("1\n0\n0\n");
         
         App.main(new String[0]);
         assertThat(getOutput(), containsString("MENÚ SUPERCALCULADORA") );

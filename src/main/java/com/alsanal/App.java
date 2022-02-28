@@ -79,34 +79,30 @@ public class App{
 
             do {
 
-                System.out.println("\n[1] Polígonos Regulares y Teorema de Pitágoras\n");
+                System.out.println("\n\u001B[37m[1] Polígonos Regulares y Teorema de Pitágoras\n");
                 System.out.println("\t0. Volver al menú principal");
                 System.out.println("\t1. Área polígono regular");
                 System.out.println("\t2. Teorema de pitágoras");
                 System.out.printf("\n\nIntroduzca una opción: ");
 
-                
-
-                subopcion1 = Integer.parseInt(sc.next());
+                comprobarNumero(sc);
+                subopcion1 = sc.nextInt();
 
                
                  switch(subopcion1) {
 
                     case 1:
                         System.out.printf("\nIntroduzca el número de lados: ");
-                        
-                        num1 = Integer.parseInt(sc.next());
-
-                        
-
+                        comprobarNumero(sc);
+                        num1 = sc.nextInt();
 
                         System.out.printf("\nIntroduzca la longitud: ");
-                        
-                        num2 = Integer.parseInt(sc.next());
+                        comprobarNumero(sc);
+                        num2 = sc.nextInt();
 
                         System.out.printf("\nIntroduzca la apotema: ");
-                        
-                        num3 = Integer.parseInt(sc.next());
+                        comprobarNumero(sc);
+                        num3 = sc.nextInt();
 
                         System.out.println("\n\t-- Resultado: " + areaPoligonosRegulares(num1, num2, num3) + " m2\n");
 
@@ -114,12 +110,12 @@ public class App{
                     
                     case 2:
                         System.out.printf("\n\u001B[34mCateto \u001B[31mA\u001B[37m: ");
-                        
-                        num1 = Integer.parseInt(sc.next());
+                        comprobarNumero(sc);
+                        num1 = sc.nextInt();
 
                         System.out.printf("\n\u001B[34mCateto \u001B[31mB\u001B[37m: ");
-                        
-                        num2 = Integer.parseInt(sc.next());
+                        comprobarNumero(sc);
+                        num2 = sc.nextInt();
 
                         System.out.println("\n\tResultado: \u001B[32m" + teoremadePitagoras(num1,num2) + "\n");
 
@@ -167,7 +163,9 @@ public class App{
                 System.out.println("\t3. Multiplicar");
                 System.out.println("\t4. Dividir\n");
                 System.out.printf("Introduzca una opción: ");
-                
+
+
+                comprobarNumero(sc);
                 subopcion2 = sc.nextInt();
             
                 /* Aritmética Básica (1. Sumar - 2. Restar - 3. Multiplicar - 4. Dividir) */
@@ -177,11 +175,13 @@ public class App{
 
                         case 1:
                             System.out.printf("\nIntroduzca el primer número: ");
-                            
+
+                            comprobarNumero(sc);
                             num1 = sc.nextInt();
 
                             System.out.printf("\nIntroduzca el segundo número: ");
                             
+                            comprobarNumero(sc);
                             num2 = sc.nextInt();
 
                             System.out.println("\n\tResultado: " + sumar(num1,num2));
@@ -191,10 +191,13 @@ public class App{
                         case 2:
                             System.out.printf("\nIntroduzca el primer número: ");
                             
+                            comprobarNumero(sc);
                             num1 = sc.nextInt();
 
                             System.out.printf("\nIntroduzca el segundo número: ");
-                            
+
+
+                            comprobarNumero(sc);
                             num2 = sc.nextInt();
 
                             System.out.println("\n\tResultado: " + restar(num1,num2));
@@ -204,10 +207,13 @@ public class App{
                         case 3:
                             System.out.printf("\nIntroduzca el primer número: ");
                             
+                            comprobarNumero(sc);
                             num1 = sc.nextInt();
 
                             System.out.printf("\nIntroduzca el segundo número: ");
                             
+
+                            comprobarNumero(sc);
                             num2 = sc.nextInt();
 
                             System.out.println("\n\tResultado: " + multiplicar(num1,num2));
@@ -217,10 +223,12 @@ public class App{
                         case 4:
                             System.out.printf("\nIntroduzca el primer número: ");
                             
+                            comprobarNumero(sc);
                             num1 = sc.nextInt();
 
                             System.out.printf("\nIntroduzca el segundo número: ");
                             
+                            comprobarNumero(sc);
                             num2 = sc.nextInt();
 
                             System.out.println("\n\tResultado: " + dividir(num1,num2));
@@ -425,11 +433,11 @@ public class App{
 
         public static void comprobarNumero( Scanner datoIntroducido) {
 
-            while(!datoIntroducido.hasNext()) {
+            while(!datoIntroducido.hasNextInt()) {
 
                 System.out.println("Valor no valido");
                 datoIntroducido.next();
-                System.out.println("INtroduce un numero");
+                System.out.println("Introduce un numero");
                
             }
 
