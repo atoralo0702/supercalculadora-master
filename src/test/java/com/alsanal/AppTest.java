@@ -107,6 +107,18 @@ public class AppTest {
 
     //Alejandro Torres Alonso --inicio --21/02/2022--
 
+    /*Prueba unitaria del funcionamiento correcto de la supercalculadora:
+    
+    MENÚ SUPERCALCULADORA(Elige opción 1)
+    1.Polígonos Regulares y Teorema de Pitágoras
+
+        1.Área de Polígono regular(Elige subopción 1)
+            Introduzca el número de lados: 5
+            Introduzca la longitud: 6
+            Introduzca la apotema: 4
+
+            Resultado: 60 m2
+    */
     @Test
     @DisplayName("Test entrada a Menú de Polígonos regulares y Teorema de Pitágoras, opción 1")
     public void testCasoMenuPoligonosRegularesYTeoremaDePitagoras1() {
@@ -117,6 +129,18 @@ public class AppTest {
         assertThat(getOutput(), containsString("60 m2") );
         
     }
+
+    /*Prueba unitaria del funcionamiento correcto de la supercalculadora:
+    
+    MENÚ SUPERCALCULADORA(Elige opción 1)
+    1.Polígonos Regulares y Teorema de Pitágoras
+    
+        2.Teorema de Pitágoras(Elige subopción 2)
+            Introduzca Cateto A: 4
+            Introduzca Cateto B: 6
+
+            Resultado: 24
+    */
 
     @Test
     @DisplayName("Test entrada a Menú de Polígonos regulares y Teorema de Pitágoras, opción 2")
@@ -131,7 +155,7 @@ public class AppTest {
 
     @Test
     @DisplayName("Test salida a Menú principal desde opción 1")
-    public void testCasoSalidaMenuPoligonosRegularesYTeoremaDePitagorasaMenuPrincipal() {
+    public void testCasoSalidaMenuPoligonosRegularesYTeoremaDePitagorasaMenuPrincipal1() {
        
         provideInput("1\n0\n0\n");
         
