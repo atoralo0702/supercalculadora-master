@@ -76,14 +76,13 @@ public class App{
 
             do {
 
-                System.out.println("\n[1] Polígonos Regulares y Teorema de Pitágoras\n");
+                System.out.println("\n\u001B[37m[1] Polígonos Regulares y Teorema de Pitágoras\n");
                 System.out.println("\t0. Volver al menú principal");
                 System.out.println("\t1. Área polígono regular");
                 System.out.println("\t2. Teorema de pitágoras");
                 System.out.printf("\n\nIntroduzca una opción: ");
 
-                
-
+                comprobarNumero(sc);
                 subopcion1 = sc.nextInt();
 
                
@@ -91,18 +90,15 @@ public class App{
 
                     case 1:
                         System.out.printf("\nIntroduzca el número de lados: ");
-                        
+                        comprobarNumero(sc);
                         num1 = sc.nextInt();
 
-                        
-
-
                         System.out.printf("\nIntroduzca la longitud: ");
-                        
+                        comprobarNumero(sc);
                         num2 = sc.nextInt();
 
                         System.out.printf("\nIntroduzca la apotema: ");
-                        
+                        comprobarNumero(sc);
                         num3 = sc.nextInt();
 
                         System.out.println("\n\t-- Resultado: " + areaPoligonosRegulares(num1, num2, num3) + " m2\n");
@@ -111,11 +107,11 @@ public class App{
                     
                     case 2:
                         System.out.printf("\n\u001B[34mCateto \u001B[31mA\u001B[37m: ");
-                        
+                        comprobarNumero(sc);
                         num1 = sc.nextInt();
 
                         System.out.printf("\n\u001B[34mCateto \u001B[31mB\u001B[37m: ");
-                        
+                        comprobarNumero(sc);
                         num2 = sc.nextInt();
 
                         System.out.println("\n\tResultado: \u001B[32m" + teoremadePitagoras(num1,num2) + "\n");
@@ -426,7 +422,7 @@ public class App{
 
                 System.out.println("Valor no valido");
                 datoIntroducido.next();
-                System.out.println("INtroduce un numero");
+                System.out.println("Introduce un numero");
                
             }
 

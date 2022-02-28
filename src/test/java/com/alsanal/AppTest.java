@@ -120,7 +120,7 @@ public class AppTest {
     @DisplayName("Test entrada a Menú de Polígonos regulares y Teorema de Pitágoras, opción 1")
     public void testCasoMenuPoligonosRegularesYTeoremaDePitagoras1() {
        
-        provideInput("1\n1\n5\n6\n4");
+        provideInput("1\n1\n5\n6\n4\n0\n0\n");
               
         App.main(new String[0]);
         assertThat(getOutput(), containsString("60 m2") );
@@ -131,7 +131,7 @@ public class AppTest {
     @DisplayName("Test entrada a Menú de Polígonos regulares y Teorema de Pitágoras, opción 2")
     public void testCasoMenuPoligonosRegularesYTeoremaDePitagoras2() {
        
-        provideInput("1\n2\n4\n6");
+        provideInput("1\n2\n4\n6\n0\n0\n");
         
         App.main(new String[0]);
         assertThat(getOutput(), containsString("24") );
@@ -142,7 +142,7 @@ public class AppTest {
     @DisplayName("Test salida a Menú principal desde opción 1")
     public void testCasoSalidaMenuPoligonosRegularesYTeoremaDePitagorasaMenuPrincipal() {
        
-        provideInput("1\n0");
+        provideInput("1\n0\n0\n");
         
         App.main(new String[0]);
         assertThat(getOutput(), containsString("MENÚ SUPERCALCULADORA") );
