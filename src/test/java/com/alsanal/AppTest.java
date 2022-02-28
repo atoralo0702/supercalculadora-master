@@ -153,6 +153,21 @@ public class AppTest {
         assertThat(getOutput(), containsString("Introduzca una opción:") );
     }
 
+    @Test
+    @DisplayName("Test salida a Menú principal desde opción 1")
+    public void testCasoSalidaMenuPoligonosRegularesYTeoremaDePitagorasaMenuPrincipalPrueba() {
+       
+        provideInput("1\n");
+        
+        App.main(new String[0]);
+        assertThat(getOutput(), containsString("[1] Polígonos Regulares y Teorema de Pitágoras") );
+        assertThat(getOutput(), containsString("0. Volver al menú principal") );
+        assertThat(getOutput(), containsString("1. Área polígono regular") );
+        assertThat(getOutput(), containsString("2. Teorema de pitágoras") );
+        assertThat(getOutput(), containsString("Introduzca una opción: ") );
+       
+    }
+
 
     //Alejandro Torres Alonso --fin --21/02/2022
 

@@ -8,7 +8,8 @@ public class App{
 
         Scanner sc = new Scanner(System.in);
         
-        int opcion;
+        int  stringInt;
+        String opcion;
 
         do {
 
@@ -20,15 +21,17 @@ public class App{
 
             System.out.printf("\nIntroduzca una opción: ");
 
-        //   comprobarNumero(sc);
-            opcion = sc.nextInt();
+           comprobarNumero(sc);
+            opcion = sc.next();
+
+            stringInt = Integer.parseInt(opcion);
 
 
           
 
             System.out.println("");
 
-            switch(opcion){
+            switch(stringInt){
         
 
                 case 1:
@@ -54,7 +57,7 @@ public class App{
 
             }
         
-        }while( opcion != 0);
+        }while( stringInt != 0);
 
         sc.close();
     }
@@ -84,7 +87,7 @@ public class App{
 
                 
 
-                subopcion1 = sc.nextInt();
+                subopcion1 = Integer.parseInt(sc.next());
 
                
                  switch(subopcion1) {
@@ -92,18 +95,18 @@ public class App{
                     case 1:
                         System.out.printf("\nIntroduzca el número de lados: ");
                         
-                        num1 = sc.nextInt();
+                        num1 = Integer.parseInt(sc.next());
 
                         
 
 
                         System.out.printf("\nIntroduzca la longitud: ");
                         
-                        num2 = sc.nextInt();
+                        num2 = Integer.parseInt(sc.next());
 
                         System.out.printf("\nIntroduzca la apotema: ");
                         
-                        num3 = sc.nextInt();
+                        num3 = Integer.parseInt(sc.next());
 
                         System.out.println("\n\t-- Resultado: " + areaPoligonosRegulares(num1, num2, num3) + " m2\n");
 
@@ -112,11 +115,11 @@ public class App{
                     case 2:
                         System.out.printf("\n\u001B[34mCateto \u001B[31mA\u001B[37m: ");
                         
-                        num1 = sc.nextInt();
+                        num1 = Integer.parseInt(sc.next());
 
                         System.out.printf("\n\u001B[34mCateto \u001B[31mB\u001B[37m: ");
                         
-                        num2 = sc.nextInt();
+                        num2 = Integer.parseInt(sc.next());
 
                         System.out.println("\n\tResultado: \u001B[32m" + teoremadePitagoras(num1,num2) + "\n");
 
@@ -422,7 +425,7 @@ public class App{
 
         public static void comprobarNumero( Scanner datoIntroducido) {
 
-            while(!datoIntroducido.hasNextInt()) {
+            while(!datoIntroducido.hasNext()) {
 
                 System.out.println("Valor no valido");
                 datoIntroducido.next();
