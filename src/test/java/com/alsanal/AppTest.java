@@ -40,7 +40,7 @@ public class AppTest {
     @DisplayName("Test entrada a Menú de Aritmética, opción A")
     public void testCasoMenuAritmetica() {
        
-        provideInput("2\n1\n5\n10");
+        provideInput("21\n5\n10\n");
         
         App.main(new String[0]);
         assertThat(getOutput(), containsString("Resultado: 15") );

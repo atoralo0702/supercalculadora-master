@@ -20,7 +20,7 @@ public class App{
 
             System.out.printf("\nIntroduzca una opción: ");
 
-          comprobarNumero(sc);
+        //   comprobarNumero(sc);
             opcion = sc.nextInt();
 
 
