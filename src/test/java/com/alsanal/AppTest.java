@@ -36,16 +36,7 @@ public class AppTest {
         return testOut.toString();
     }
 
-    @Test
-    @DisplayName("Test entrada a Menú de Aritmética, opción A")
-    public void testCasoMenuAritmetica() {
-       
-        provideInput("21\n5\n10\n");
-        
-        App.main(new String[0]);
-        assertThat(getOutput(), containsString("Resultado: 15") );
-        
-    }
+    
 
     //Santi empieza a codificar el 21/02/2022
 
