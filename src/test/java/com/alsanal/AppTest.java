@@ -177,6 +177,61 @@ public class AppTest {
         assertThat(getOutput(), containsString("Introduzca una opción:") );
     }
 
+    //Alejandro Torres Alonso --inicio --21/02/2022--
+
+    /*Prueba unitaria del funcionamiento correcto de la supercalculadora:
+    
+    MENÚ SUPERCALCULADORA(Elige opción 1)
+    1.Polígonos Regulares y Teorema de Pitágoras
+
+        1.Área de Polígono regular(Elige subopción 1)
+            Introduzca el número de lados: cadena
+            Valor no válido
+            Introduce un número:
+            5
+            Introduzca la longitud: 6
+            Introduzca la apotema: 4
+
+            Resultado: 60 m2
+    */
+    @Test
+    @DisplayName("Test entrada a Menú de Polígonos regulares y Teorema de Pitágoras, opción 1(caso de introducir cadena)")
+    public void testCasoMenuPoligonosRegularesYTeoremaDePitagorasConLetra() {
+       
+        provideInput("1\n1\ncadena\n5\n\n6\n4\n0\n0\n");
+              
+        App.main(new String[0]);
+        assertThat(getOutput(), containsString("60 m2") );
+        
+    }
+
+    //Alejandro Torres Alonso --inicio --21/02/2022--
+
+    /*Prueba unitaria del funcionamiento correcto de la supercalculadora:
+    
+    MENÚ SUPERCALCULADORA(Elige opción 1)
+    1.Polígonos Regulares y Teorema de Pitágoras
+
+        2.Teorema de Pitágoras(Elige subopción 2)
+            Cateto A: cadena
+            Valor no valido
+            Introduce un número
+            4
+            Cateto B: 6
+
+            Resultado: 24
+    */
+    @Test
+    @DisplayName("Test entrada a Menú de Polígonos regulares y Teorema de Pitágoras, opción 2(caso de introducir cadena)")
+    public void testCasoMenuPoligonosRegularesYTeoremaDePitagorasConLetra2() {
+       
+        provideInput("1\n2\ncadena\n4\n6\n0\n0\n");
+              
+        App.main(new String[0]);
+        assertThat(getOutput(), containsString("24") );
+        
+    }
+
     //Alejandro Torres Alonso --fin --21/02/2022
 
 
