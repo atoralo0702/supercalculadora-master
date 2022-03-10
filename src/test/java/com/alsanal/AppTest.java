@@ -419,5 +419,29 @@ public class AppTest {
             );
             
         }
+
+        @Test
+        @DisplayName("Test sin")
+        public void testCasoSin() {
+        
+            provideInput("4\n2\n");
+            
+            App.main(new String[0]);
+            assertThat(getOutput(), containsString("El seno de 2 es 0.9092974268256817") 
+            );
+            
+        }
+
+        @Test
+        @DisplayName("Test sin introduciendo letras")
+        public void testCasoSinIntroducirLetras() {
+        
+            provideInput("4\na\n2\n");
+            
+            App.main(new String[0]);
+            assertThat(getOutput(), containsString("El seno de 2 es 0.9092974268256817")
+            );
+            
+        }
 }
 

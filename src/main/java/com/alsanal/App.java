@@ -1,6 +1,9 @@
 package com.alsanal;
 
+import java.util.Iterator;
 import java.util.Scanner;
+
+import org.apache.commons.math3.util.CombinatoricsUtils;
 
 public class App {
 
@@ -18,6 +21,8 @@ public class App {
             System.out.println("\t1. Polígonos Regulares y Teorema de Pitágoras");
             System.out.println("\t2. Aritmética básica");
             System.out.println("\t3. Ecuaciones 1er y 2do grado");
+            System.out.println("\t4. Calcular el seno");
+            System.out.println("\t5. Mostrar iterator");
 
             System.out.printf("\nIntroduzca una opción: ");
 
@@ -49,6 +54,19 @@ public class App {
                     /* Código Santiago Sánchez Fernandez */
                     menuEcuaciones1y2Grado(sc);
 
+                    break;
+
+                case 4:
+
+
+                    /* Código examen recuperación Alejandro Torres*/
+                    calcularSeno(sc);
+                    break;
+
+                case 5:
+
+                /* Código examen recuperación Alejandro Torres*/
+                    iteratorNumbers();
                     break;
 
             }
@@ -507,6 +525,36 @@ public class App {
 
         }
 
+    }
+
+    public static void calcularSeno(Scanner s){
+
+        int x = 0;
+        double sin = 0.0;
+
+        System.out.println("Ha elegido la opción calcular seno, introduzca un número(solo se aceptan numeros enteros)");
+        comprobarNumero(s);
+        x = s.nextInt();
+
+        sin = Math.sin(x);
+
+        System.out.println("El seno de "+x+" es "+sin);
+    }
+
+    public static void iteratorNumbers(){
+
+        int r = 2;
+        int n = 5;
+        int i = 0;
+
+        Iterator<int[]> iterator = CombinatoricsUtils.combinationsIterator(n, r);
+
+        while(iterator.hasNext()){
+
+            
+            System.out.println(iterator.next());
+            i++;
+        }
     }
 
 }
